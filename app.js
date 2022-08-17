@@ -1,11 +1,17 @@
-// Тоглогчийн ээлжийг хадгалах хувьсагч , 1р тоглогчийг 0 , 2р тоглогчийг 1 гэнэ
-var activePlayer = 0;  
+var diceDom = document.querySelector('.dice');
+//  Тоглоомын бүх газар зарлагдах Public хувьсагчид 
+var activePlayer ;
+var scores ;
+var roundScores;
+function InitGame(){
+    // Тоглогчийн ээлжийг хадгалах хувьсагч , 1р тоглогчийг 0 , 2р тоглогчийг 1 гэнэ
+activePlayer = 0;  
 
 // Тоглогчдын цуглуулсан оноог цуглуулах хувьсагч
-var scores = [0 , 0 ];
+scores = [0 , 0 ];
 
 // Тоглогчийн ээлжиндээ цуглуулж байгаа оноог хадгалах хувьсагч
-var roundScores = 0;
+roundScores = 0;
 
 
 // Программ эхлэхэд бэлтгэнэ
@@ -16,8 +22,23 @@ document.getElementById('score-1').textContent = '0';
 document.getElementById('current-0').textContent = '0';
 document.getElementById('current-1').textContent = '0';
 
-var diceDom = document.querySelector('.dice');
+
+// Тоглогчлдийн нэрийг буцааж хэвийн болгох
+document.getElementById('name-0').textContent='Player-1';
+document.getElementById('name-1').textContent='Player-2';
+
+document.querySelector('.player-0-panel').classList.remove('active');
+document.querySelector('.player-1-panel').classList.remove('active');
+
+
+document.querySelector('.player-0-panel').classList.add('active');
+
+
+
 diceDom.style.display = 'none';
+
+}
+InitGame();
 
 // Шилжилт хийх Функц 
 function switchtoNextPlayer(){
@@ -80,5 +101,6 @@ document.querySelector('.btn-hold').addEventListener('click' , function(){
 
 // Шинэ тоглоом эхлүүлэх new button ий eventlitner
 document.querySelector('.btn-new').addEventListener('click',function(){
-    alert(24);
+    
+  InitGame();
 });
