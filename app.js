@@ -103,7 +103,7 @@ document.querySelector('.btn-hold').addEventListener('click' , function(){
        document.getElementById('score-' +activePlayer).textContent=scores[activePlayer];
 
     //  Уг тоглогч хожсон эсэхийг шалгах
-    if(scores[activePlayer] >= 10){
+    if(scores[activePlayer] >= 30){
      isGameOver = true;
 
         // Ялагч гэсэн текстийг нэрнийх нь оронд гаргана
